@@ -1,0 +1,20 @@
+Pre-lab 6 questions
+Name: Lucius Gao
+Cnet ID: luciusgao2001
+Lab start time: 5:00
+
+Note: There may be more than one answer. Make sure you leave
+all that apply
+1. The convention for naming the values for enumerated types is:
+(delete the incorrect ones)
+      b) First letter capitalized with rest lowercase
+
+2. The convention for naming the type for enumerated types is:
+(delete the incorrect ones)
+      a) All lowercase letters
+
+3. What is true about enumerated type values?
+(delete the incorrect ones)
+      a) They may be compared just like integer values
+      b) You can force a particular value when you define the enumerated type
+      c) Unless otherwise specified, names defined consecutively have consecutive integer values

@@ -1,0 +1,208 @@
+;; _total-score				 95 / 100
+
+;; Week 5 Assignment
+
+;; === automated correctness===
+
+;; === warmup ===
+
+;; safe_str_concat				10.0 / 10
+("a", "bcd"):
+Memory allocated:  CORRECT
++ 2.0 / 2.0
+Strings copied:  CORRECT
++ 3.0 / 3.0
+
+("Test ", "String"):
+Memory allocated:  CORRECT
++ 2.0 / 2.0
+Strings copied:  CORRECT
++ 3.0 / 3.0
+
+;; make_init_array				5.0 / 5
+Memory allocated:  CORRECT
++ 1.0 / 1.0
+Size initialized: 0  CORRECT
++ 2.0 / 2.0
+Array initialized:  CORRECT
++ 2.0 / 2.0
+
+;; write_value				8.0 / 10
+Array of 16 0s, index 16, value 10:
+Array reallocated:  INCORRECT
++ 0.0 / 1.0
+Size updated: 16  INCORRECT
++ 0.0 / 0.5
+Value written:  INCORRECT
++ 0.0 / 0.5
+Student array: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Grader note: Be careful with the difference between max index and size of array
+
+[5, 4, 3, 1], index 2, value 10:
+Value written:  CORRECT
++ 2.0 / 2.0
+
+Array of 16 1s, index 20, value 2:
+Array reallocated:  CORRECT
++ 2.0 / 2.0
+Size updated: 32  CORRECT
++ 1.0 / 1.0
+Elements copied:  CORRECT
++ 1.0 / 1.0
+Value written:  CORRECT
++ 2.0 / 2.0
+
+;; read_value				5.0 / 5
+[5, 4, 3, 1], index 3: 1  CORRECT
++ 4.0 / 4.0
+[5, 4, 3, 1], index 5: 0  CORRECT
++ 1.0 / 1.0
+
+;; make_and_init_image				10.0 / 10
+1x1 initialized to {1, 1, 1}:
+Memory allocated:  CORRECT
++ 3.0 / 3.0
+Colors correct: CORRECT
++ 2.0 / 2.0
+
+5x5 initialized to {1, 2, 3}:
+Memory allocated:  CORRECT
++ 3.0 / 3.0
+Colors correct: CORRECT
++ 2.0 / 2.0
+
+
+;; === hw ===
+
+;; make_empty_string				5.0 / 5
+Memory allocated:  CORRECT
++ 2.0 / 2.0
+Length value: 1  CORRECT
++ 2.0 / 2.0
+String value:  CORRECT
++ 1.0 / 1.0
+
+;; make_string				5.0 / 5
+"Test String":
+String allocated:  CORRECT
++ 2.0 / 2.0
+Length value: 12  CORRECT
++ 2.0 / 2.0
+String value:  CORRECT
++ 1.0 / 1.0
+
+;; safe_str_cpy				10.0 / 10
+"String" -> dest size [7]:
+No new memory allocated:  CORRECT
++ 1.0 / 1.0
+String copied:  CORRECT
++ 1.0 / 1.0
+
+"I am a string that takes up 38 bytes." -> dest size [10]:
+New memory allocated:  CORRECT
++ 2.0 / 2.0
+String copied:  CORRECT
++ 2.0 / 2.0
+Length value: Got 38  CORRECT
++ 1.0 / 1.0
+
+"I take exactly 25 bytes." -> dest size [24]:
+New memory allocated:  CORRECT
++ 1.0 / 1.0
+String copied:  CORRECT
++ 1.0 / 1.0
+Length value: Got 25  CORRECT
++ 1.0 / 1.0
+
+;; safe_str_cat				8.0 / 10
+("Test ", "String") dest[12]:
+No new memory allocated:  INCORRECT
++ 0.0 / 1.0
+String correct:  CORRECT
++ 1.0 / 1.0
+Grader note: Read the instructions. No need to allocate new memory when dest
+is of enough size
+
+("Test ", "String") dest[9]:
+New memory allocated:  CORRECT
++ 1.0 / 1.0
+String correct:  CORRECT
++ 1.0 / 1.0
+Length value: 15  INCORRECT
++ 0.0 / 1.0
+
+("A", "B") dest[2]:
+New memory allocated:  CORRECT
++ 2.0 / 2.0
+String correct:  CORRECT
++ 2.0 / 2.0
+Length value: 3  CORRECT
++ 1.0 / 1.0
+
+;; safe_strchr				4.0 / 5
+("aaabccd", 'c'):  CORRECT
++ 1.0 / 1.0
+("aaabccd", 'a'):  CORRECT
++ 1.0 / 1.0
+("aaabccd", 'd'):  CORRECT
++ 1.0 / 1.0
+("A", 'A'):  CORRECT
++ 1.0 / 1.0
+("Test", 'q'):  INCORRECT: Program exited
++ 0.0 / 1
+
+;; safe_strcmp				5.0 / 5
+("Test", "Test"): 0  CORRECT
++ 1.0 / 1.0
+("b", "ba"): -1  CORRECT
++ 1.0 / 1.0
+("Az", "c"): -1  CORRECT
++ 1.0 / 1.0
+("qz", "Qa"): 1  CORRECT
++ 1.0 / 1.0
+("bcd", "abc"): 1  CORRECT
++ 1.0 / 1.0
+
+;; automated_correctness_subtotal_:				75.0 / 80
+
+
+;; ===
+;; partial credit returned via visual inspection - only for
+;; problems on which you earned fewer points than you can get back.
+;; if you got more than 0 points, then the partial credit is scaled.
+;; look at code for grader notes if bugs identified
+
+;; any systemic error that is off-by-one or something similar
+;; - restore all but 1 pt
+
+;; make_init_array: initializes array to [0]	/ 1
+;; - +1 pt
+
+;; compile error requiring manual fix		/ 0
+
+;; manual_correctness_subtotal_:	     /
+
+;; combined_correctness_subtotal_:	     / 80
+
+;; === style ==
+
+;; well-written purposes              2 / 2
+;; proper indentation, line breaks    3 / 3
+;; adequate tests                     5 / 5
+
+;; === efficiency ===
+;; good decisions for control structures 5 / 5
+ -2 - inappropriate control structure (if/else where switch should have been)
+ -2 - repeated function calls with same input and same result
+ -2 - any other inefficient design decisions - library call where simple calculation would do
+
+;; === cushion ===
+5-pt bonus to all. Only regrades totaling more than
+5 pts will be considered
+					5 / 5
+
+;; === problem-specific requirements ===
+
+;; style _subtotal_:		    20 / 20
+
+;; graded by liuyifan

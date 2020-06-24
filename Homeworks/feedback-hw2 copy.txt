@@ -1,0 +1,234 @@
+;; _total-score_                   95 / 100
+
+;; graded by vycai 
+;; Week 2 assignment
+;; === automated correctness ===
+
+;;print_asterisk_letter	4/5
+	input_char S	1/1
+VISUAL INSPECTION
+Expected:
+ ****
+*    
+ *** 
+    *
+**** 
+Actual:
+ ****
+*
+ ***
+    *
+****
+
+
+	input_char T	1/1
+VISUAL INSPECTION
+Expected:
+*****
+  *  
+  *  
+  *  
+  *  
+Actual:
+*****
+  *
+  *
+  *
+  *
+
+
+	input_char U	1/1
+VISUAL INSPECTION
+Expected:
+*   *
+*   *
+*   *
+*   *
+ *** 
+Actual:
+*   *
+*   *
+*   *
+*   *
+ ***
+
+
+	input_char V	1/1
+VISUAL INSPECTION
+Expected:
+*   *
+*   *
+*   *
+ * * 
+  *  
+Actual:
+*   *
+*   *
+*   *
+ * *
+  *
+
+
+	input_char W	0/1
+VISUAL INSPECTION
+Expected:
+ERROR (print_asterisk_letter): Invalid character
+Actual:
+
+
+
+
+;;draw_hourglass_rec	10/10
+	height 3	7/7
+VISUAL INSPECTION
+Expected: 
+***
+ *
+***
+Actual: 
+***
+ *
+***
+
+	height 4	3/3
+VISUAL INSPECTION
+Expected: 
+***
+ *
+ *
+***
+Actual: 
+***
+ *
+ *
+***
+
+
+;;draw_hourglass_iter	10/10
+	height 3	7/7
+	height 4	3/3
+
+;;extract_digit	5/5
+	guess 1534, digit 2,	2/2
+	guess 1534, digit 1,	2/2
+	guess 1634, digit 5,	1/1
+
+;;num_of_color	10/10
+	pattern 1534, color 3,	2/2
+	pattern 1634, color 4,	2/2
+	pattern 1441, color 4,	2/2
+	pattern 6234, color 6,	2/2
+	pattern 1131, color 1,	2/2
+
+;;count_exact_matches	10/10
+	guess 2415, solution 1425,	2/2
+	guess 2415, solution 3636,	2/2
+	guess 2445, solution 2451,	2/2
+	guess 2435, solution 6416,	2/2
+	guess 2435, solution 5342,	2/2
+
+;;count_color_matches	5/5
+	guess 2415, solution 1425,	1/1
+	guess 2415, solution 3636,	1/1
+	guess 2445, solution 2451,	1/1
+	guess 2435, solution 6416,	1/1
+	guess 2435, solution 5342,	1/1
+
+;;get_guess_feedback	10/10
+	guess 2415, solution 1425,	2/2
+	guess 2445, solution 2451,	2/2
+	guess 2435, solution 6416,	2/2
+	guess 2435, solution 5342,	2/2
+	guess 7642, solution 5343,	1/1
+VISUAL INSPECTION
+Expected:
+XXXX is an invalid guess. Make sure your guess is a 4-digit number, each digit between 1-6.
+Actual:
+stderr: Invalid inputs, please make sure that the guess pattern and solution pattern are both 4 digits long
+
+
+
+	guess 42, solution 5344,	1/1
+VISUAL INSPECTION
+Expected:
+XXXX is an invalid guess. Make sure your guess is a 4-digit number, each digit between 1-6.
+Actual:
+stderr: Invalid inputs, please make sure that the guess pattern and solution pattern are both 4 digits long
+
+
+
+
+;;play_mastermind	10/10
+	guesses 1	4/4
+	guesses 2	4/4
+	guesses 12	2/2
+
+ ;; automated_correctness_subtotal_:		74/75
+
+;; === 
+;; partial credit returned via visual inspection - only for
+;; problems on which you earned fewer points than you can get back.
+;; if you got more than 0 points, then the partial credit is scaled.
+;; look at code for grader notes if bugs identified
+
+;; draw_hourglass_rec	-   
+make sure no points are taken off for something that you can't see visually - 
+like perhaps an extra space at the end of the line. That should restore
+all points back.
++8 - only problem is systemic minor printing difficulty like extra line somewhere
++2 - draws something hourglass-ish in a recursive manner
+				
+;; draw_hourglass_iter	-   / 
+make sure no points are taken off for something that you can't see visually - 
+like perhaps an extra space at the end of the line. That should restore
+all points back.
++8 - only problem is systemic minor printing difficulty like extra line somewhere
++2 - draws something hourglass-ish in a recursive manner
+
+				
+;; play_mastermind
+;; if there are some visual mismatches, grade this way instead
+take off once per category, not once per instance.
+-0 - visual mismatch that is only extra line or spacing, nothing
+   - against the requirements
+-1 - minor mismatch that involves using a different printf than provided
+-2 - doesn't print out the guess number properly
+-2 - doesn't choose between Congratulations and not quite properly
+-2 - doesn't print out feedback properly
+-5 - doesn't ask for multiple guesses
+
+
+;; if necessary, 10 pt charge for grader manually
+;; getting code to run (as long as it was student error)
+
+;; only for items incorrect in automated grading
+;; manual_correctness_subtotal_:	     / 
+
+;; combined_correctness_subtotal_:	    74 / 75
+
+;; === style ===
+
+;; well-written purposes             4 / 4
+;; proper indentation, line breaks   0 / 4
+GRADER: -2 for lines > 80 chars (99, 100, 117, 131-134, 152, 165, 176, 209, 224, 236, 256,
+        328, 332, 336, 367, 374, 388, 398, 404, 409, 442, 443, 466, 473, 551, 558, 578, 614,
+        622, 629, 639, 646, 649, 657, 663)
+        -2 for unnecessary indentation in lines 494-535
+;; well-named variables		     4 / 4
+(i, j, k okay for simple loop counters. Meaningful names for others.)
+;; adequate tests                    8 / 8
+(for each function, tests that exercise pertinent functionality and error conditions)
+
+;; === efficiency ===
+;; good decisions for control structures 5 / 5
+ -2 - inappropriate control structure (if/else where switch should have been)
+ -2 - repeated function calls with same input and same result
+
+;; === problem-specific requirements === 
+;; Remove points from correctness testing if they don't use recursion when specified.
+;; This refers to the recursive problems
+
+;; style _subtotal_:		   21 / 25
+
+;; graded by Vanessa Cai
+

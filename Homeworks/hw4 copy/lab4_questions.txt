@@ -1,0 +1,28 @@
+Pre-lab 3 questions
+Name: Lucius Gao
+Cnet ID: luciusgao2001	
+Lab start time: 5:00 pm
+
+Note: There may be more than one answer. Make sure you leave
+all that apply.
+1. Label each line with the color it will produce given RGB colors from 0-255.
+
+      a) 255, 0, 0 RED
+      b) 0, 255, 0 GREEN
+      c) 0, 0, 255 BLUE
+      d) 0, 0, 0 BLACK
+      e) 255, 255, 255 WHITE
+
+2. png compresses the file without losing any information. This is called:
+(delete the incorrect one)
+      a) lossless
+     
+3. All strings in C end with:
+(delete the incorrect ones)
+      b) \0
+
+4. When you pass a string, you pass (copy to a local variable):
+(delete the incorrect ones)
+      a) The length of the array
+      c) The address of the beginning of the string
+      e) The contents of the entire string

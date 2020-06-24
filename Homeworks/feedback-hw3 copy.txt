@@ -1,0 +1,196 @@
+;; _total-score_                    90 / 100
+
+;; Week 3 assignment
+
+;; === automated correctness ===
+
+;; remove_max			7 / 7
+  [1 / 1] check max value {9,5,7,6,2,2,3}
+  [1 / 1] check max value {6,3,2,2,3,1,7,8}
+  [1 / 1] check array modification {9,5,7,6,2,2,3}
+  [1 / 1] check array modification {1,2,3,4,15,6,7,8,9}
+  [1 / 1] check array modification {1}
+  [1 / 1] check array modification {1,2,3,14,14,6,7,8}
+  [1 / 1] check array modification {11,2,3,4,5,6,7,11}
+
+;; init_board			5 / 5
+  [5 / 5] test on empty board
+
+;; place_piece			8 / 8
+  [2 / 2] board: init_board, row: 0, col: 0
+  [2 / 2] board: init_board, row: 7, col: 7
+  [2 / 2] board: init_board, row: 3, col: 6
+  [1 / 1] board: init_board, row: 2, col: 3
+  [1 / 1] board: init_board, row: 9, col: 5
+
+;; area_and_perimeter			6 / 6
+  [3 / 3] height: 3.500000, length: 7.900000, check area
+  [3 / 3] height: 3.500000, length: 7.900000, check perimeter
+
+;; remove_max_in_out			0 / 4
+  [0 / 2] check update of length parameter {1,2,3,4,15,6,7,8,9}
+ Segmentation fault
+  [0 / 2] check update of length parameter {1,2,3,14,5,14,7,8}
+ Segmentation fault
+
+;; player_won			10 / 10
+  [2 / 2] 'w' wins because 'b' is out of pieces
+  [2 / 2] 'b' wins because 'w' is out of pieces
+  [2 / 2] w does not win
+  [2 / 2] b does not win
+  [1 / 1] b has no valid moves left
+  [1 / 1] w has no valid moves left
+
+;; do_move			25 / 25
+  [1 / 1] start row out of range - check return value
+  [1 / 1] end col out of range - check return value
+  [1 / 1] end spot already occupied - check return value
+  [1 / 1] Trying to hop but no item beneath - check return value
+  [1 / 1] Trying to hop but wrong colored item beneath - check return value
+  [1 / 1] moving in the wrong direction - check return value
+  [1 / 1] end row out of range - check board modification
+  [1 / 1] starting spot occupied by the wrong color - check board modification
+  [1 / 1] moving sideways - check board modification
+  [2 / 2] king able to in opposite direction
+  [2 / 2] w moves to edge of board
+  [2 / 2] w moves within middle of board
+  [2 / 2] b moves within middle of board
+  [2 / 2] w captures opponent, moves to space in middle of board
+  [2 / 2] w captures opponent, moves to edge and becomes king
+  [2 / 2] b captures opponent, moves to space in middle of board
+  [2 / 2] b captures opponent, moves to edge
+
+;; computer_move			0 / 10
+  [0 / 2] initial board
+  player=b, board ---
+      0 1 2 3 4 5 6 7
+    0 * b * b * b * b
+    1 b * b * b * b *
+    2 * b * b * b * b
+    3 * * * * * * * *
+    4 * * * * * * * *
+    5 w * w * w * w *
+    6 * w * w * w * w
+    7 w * w * w * w *
+  - you did not indicate a valid computer move by doing at least one of the following -
+    a. setting row and col or b. correctly modifying the board.
+  -   you did not set row and col
+  -   you did not modify the board or you didn't do it correctly
+  - your return value was wrong
+ --- end of test case
+  [0 / 2] random board with several available moves
+  player=w, board ---
+      0 1 2 3 4 5 6 7
+    0 * b * b * * * *
+    1 * * b * b * * *
+    2 * * * w * b * *
+    3 * * * * * * w *
+    4 * b * b * w * *
+    5 * * w * b * w *
+    6 * w * * * w * *
+    7 w * w * w * * *
+  - you did not indicate a valid computer move by doing at least one of the following -
+    a. setting row and col or b. correctly modifying the board.
+  -   you did not set row and col
+  -   you did not modify the board or you didn't do it correctly
+  - your return value was wrong
+ --- end of test case
+  [0 / 2] random board with several available moves
+  player=b, board ---
+      0 1 2 3 4 5 6 7
+    0 * b * b * b * b
+    1 b * b * b * b *
+    2 * b * b * * * b
+    3 * * * * b * * *
+    4 * * * w * w * *
+    5 w * w * * * * *
+    6 * w * w * w * w
+    7 w * w * w * w *
+  - you did not indicate a valid computer move by doing at least one of the following -
+    a. setting row and col or b. correctly modifying the board.
+  -   you did not set row and col
+  -   you did not modify the board or you didn't do it correctly
+  - your return value was wrong
+ --- end of test case
+  [0 / 2] random board with one available move
+  player=w, board ---
+      0 1 2 3 4 5 6 7
+    0 * * * * * * * *
+    1 * * * * * * * *
+    2 * b * b * b * *
+    3 * * b * b * b *
+    4 * b * w * b * b
+    5 * * w * w * b *
+    6 * * * w * w * w
+    7 * * * * * * w *
+  - you did not indicate a valid computer move by doing at least one of the following -
+    a. setting row and col or b. correctly modifying the board.
+  -   you did not set row and col
+  -   you did not modify the board or you didn't do it correctly
+  - your return value was wrong
+ --- end of test case
+  [0 / 2] random board with one available move
+  player=b, board ---
+      0 1 2 3 4 5 6 7
+    0 * b * * * * * *
+    1 b * w * * * * *
+    2 * w * w * * * *
+    3 * * w * * * * *
+    4 * * * * * * * w
+    5 * * * * w * b *
+    6 * * * * * B * w
+    7 * * * * w * w *
+  - you did not indicate a valid computer move by doing at least one of the following -
+    a. setting row and col or b. correctly modifying the board.
+  -   you did not set row and col
+  -   you did not modify the board or you didn't do it correctly
+  - your return value was wrong
+ --- end of test case
+
+;; automated_correctness_subtotal_:		61 / 75
+
+;; ===
+;; partial credit returned via visual inspection - only for
+;; problems on which you earned fewer points than you can get back.
+;; if you got more than 0 points, then the partial credit is scaled.
+;; look at code for grader notes if bugs identified
+
+;; remove_max_in_out +2 partial credit
+Grader comment: it would be safer to store the value of length as a local
+variable instead of referring to it using the pointer throughout the function,
+and only set its value at the very end.
+
+;; computer_move +5 partial credit
+Grader comment: calling available_move() is kind of redundant since you are
+checking each diagonal move again. Reducing the complexity of your code makes
+it less error-prone.
+
+
+;; only for items incorrect in automated grading
+;; manual_correctness_subtotal_:	    +7
+
+;; combined_correctness_subtotal_:	     66 / 75
+
+;; === style ===
+
+;; well-written purposes              4 / 4
+;; proper indentation, line breaks    3 / 4
+Grader comment: -1 for inconsistent tab and space use.
+(for example, remove_max_in_out)
+Please use only one type consistently (you can adjust the configuration in the
+text editor that you prefer to use), or else the indentation will be messed up
+because the visual length of tabs may vary.
+
+;; well-named variables		      4 / 4
+(i, j, k okay for simple loop counters. Meaningful names for others.)
+;; adequate tests                     8 / 8
+(for each function, tests that exercise pertinent functionality and error conditions)
+
+;; === efficiency ===
+;; good decisions for control structures 5 / 5
+ -2 if any inappropriate control structure (if/else where switch should have been)
+ -2 if any repeated function calls with same input and same result
+
+;; style _subtotal_:		    24 / 25
+
+;; graded by hansonlu

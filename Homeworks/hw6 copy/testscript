@@ -1,0 +1,2 @@
+echo "Function Tests"
+./hw6 "products.txt"

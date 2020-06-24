@@ -1,0 +1,20 @@
+echo "Warmup Tests"
+./warmup5 1 1 firststring secondstring firststringsecondstring
+./warmup5 1 2
+./warmup5 2
+./warmup5 3 
+./warmup5 4
+./warmup5 5 100 50 0 128 128 test100x50gb.png
+./warmup5 5 200 500 128 0 128 test200x500rb.png
+echo "Homework Tests"
+./hw5 1
+./hw5 2 1 hello 6 hello
+./hw5 2 2
+./hw5 3 1 string1 string2 string2 8
+./hw5 3 2
+./hw5 4 1 original concat originalconcat
+./hw5 4 2
+./hw5 5 1 string 'r' ring
+./hw5 5 2
+./hw5 6 1 string string 0 
+./hw5 6 2
