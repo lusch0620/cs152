@@ -1,2 +1,2 @@
 # cs152
-CS152 Homeworks from 2019
+CS152 Homeworks from Winter 2020
